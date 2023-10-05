@@ -5,6 +5,21 @@
     background: grey;
 }
 
-.button:hover {
-    background-color: darkgrey;
+.form__buttonClear:hover {
+    background-color: rgb(237, 98, 98);
+    color: white;
+}
+
+
+.form__buttonClear {
+    padding: 10px;
+    margin: 5px;
+    width: 150px;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(76, 78, 76);
+}
+
+.container__buttons {
+    text-align: center;
 }

@@ -20,28 +20,57 @@
         rel="stylesheet">
 </head>
 
-<body class="body">
-
- 
+<body class="body background">
 
 
-    <form class="js-form form">
-        <h1 class="form_header">Kalkulator walut</h1>
-        <p>
-            <label>
-                Kwota w zł*: <input type="number" min="1" step="any">
-            </label>
-        </p>
-        <p>
-            <label>
-                Waluta: <input type="number" min="1" step="any">
-            </label>
-        </p>
 
 
-        <button class="button">Przelicz</button>
-    </form>
+    <div class="container">
+        <form class="js-form form">
+            <fieldset class="form__fieldset">
+                <legend class="form__legend">Kalkulator walut</legend>
+                <p>
 
+                    <span class="form__label">Kwota w PLN <span class="form--asterick">*</span></span> </label>
+
+                    <input class="form__field js-amount" placeholder="Podaj kwotę w PLN" type="number" min="1" required
+                        step=0.01>
+
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <span class="form__label">
+                            Waluta:
+                        </span>
+
+                        <select class="form__field js-currency">
+                            <option value="EUR">Euro</option>
+                            <option value="USD">Dolar amerykański</option>
+                            <option value="GBP">Funt brytyjski</option>
+                        </select>
+                    </label>
+                </p>
+
+
+                <div class="container__buttons">
+                    <p>
+                        <input type="submit" class="form__buttonClear" value="Przelicz">
+                    </p>
+
+                </div>
+                <p>
+                    Pola wymagane są oznaczone<span class="form--asterick">*</span>
+                </p>
+            </fieldset>
+
+
+            <p class="container__result js-result form-result">
+            <p class="form__info js-info"></p>
+            </p>
+        </form>
+
+    </div>
 </body>
 
 </html>
