@@ -8,5 +8,8 @@ This is my one of first small project - really simple currency calculator. Mainl
 
 https://bras-klaudia.github.io/currency-calculator/
 
+![Screen1](images/screen1.png)
+![Screen1](images/screen2.png)
+
 ## Technology
 HTML, CSS, JavaScript
