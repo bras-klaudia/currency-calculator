@@ -1,38 +1,53 @@
-let formElement = document.querySelector(".js-form");
-let amountElement = document.querySelector(".js-amount");
-let currencyElement = document.querySelector(".js-currency");
-let resultElement = document.querySelector(".js-result");
-let resultInfo = document.querySelector(".js-info");
+{
+    const calculateResult = (currency) => {
+        const rateEUR = 4;
+        const rateGBP = 5;
+        const rateUSD = 3;
 
+        switch (amount, currency) {
+            case "EUR":
+                return = amount / rateEUR;
 
+            case "USD":
+                return = amount / rateUSD;
 
-formElement.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-
-
-    let amount = +amountElement.value;
-    let currency = currencyElement.value;
-    let rateEUR = 4;
-    let rateGBP = 5;
-    let rateUSD = 3;
-
-    let result;
-
-    switch (currency) {
-        case "EUR":
-            result = amount / rateEUR;
-            break;
-
-        case "USD":
-            result = amount / rateUSD;
-            break;
-
-        case "GBP":
-            result = amount / rateGBP;
-            break;
+            case "GBP":
+                return = amount / rateGBP;
+        }
     };
 
-    resultElement.textContent = `${amount} PLN wynosi ${result.toFixed(2)} ${currency}`;
-    resultInfo.textContent = `Kurs walut NBP na dzień: 10 października 2023 r.`;
-});
+    const init = () => {
+        const formElement = document.querySelector(".js-form");
+
+        formElement.addEventListener("submit", OnFormSubmit);
+
+    };
+
+    const updateResultText = (amount, result, currency) => {
+
+        const resultElement = document.querySelector(".js-result");
+        const resultInfo = document.querySelector(".js-info");
+
+        resultElement.textContent = `${amount} PLN wynosi ${result.toFixed(2)} ${currency}`;
+        resultInfo.textContent = `Kurs walut NBP na dzień: 10 października 2023 r.`;
+    };
+
+    const OnFormSubmit = (event) => {
+        event.preventDefault();
+
+        const amountElement = document.querySelector(".js-amount");
+        const currencyElement = document.querySelector(".js-currency");
+
+        const amount = +amountElement.value;
+        const currency = currencyElement.value;
+
+
+        result = calculateResult(amount, currency);
+
+
+        updateResultText(amount, result, currency);
+    };
+
+    init();
+
+}
